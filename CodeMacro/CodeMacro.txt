@@ -7,8 +7,8 @@ Dim MonApplication As Object
 
 
 'Message Box Windows
-title = "Pirater !!!!"
-msg = "Vous avez activé les macros, cela pourrait permettre à un attaquant de prendre contrôle du système et ainsi accéder au réseau sous-jacent"
+title = "Virus !!!!"
+msg = "Vous avez activé les macros, cela pourrait permettre à un attaquant de prendre contrôle du système et ainsi accéder au réseau sous-jacent. Vous avez perdu 1 point."
 intResponse = MsgBox(msg, 16, title)
 
 Randomize
