@@ -1,0 +1,35 @@
+body{
+    background-color: black;
+}
+
+.conteneur{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+}
+
+#img{
+    position: fixed;
+    height: 70%;
+    float: right;
+}
+
+#warning{
+    position: fixed;
+    text-align: center;
+    height: 20%;
+    width: 85%;
+    bottom: 10%;
+    top: 75%;
+    left: 15%;
+    color: white;
+    font-size: 50px;
+} 
+
+#attentionImg{
+    position: fixed;
+    width: 15%;
+    left: 0%;
+    top: 80%;
+}
