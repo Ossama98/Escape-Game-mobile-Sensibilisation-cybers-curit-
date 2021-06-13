@@ -1,0 +1,35 @@
+Sub AutoOpen()
+
+'Declaration des variables
+Dim title, msg As String
+Dim intResponse As Integer
+Dim MonApplication As Object
+
+
+'Message Box Windows
+title = "Pirater !!!!"
+msg = "Vous avez activé les macros, cela pourrait permettre à un attaquant de prendre contrôle du système et ainsi accéder au réseau sous-jacent"
+intResponse = MsgBox(msg, 16, title)
+
+Randomize
+SendKeys "% ~{UP " & Int(40 * Rnd) + 1 & "}{LEFT " & Int(60 * Rnd) + 1 & "}~"
+intResponse = MsgBox(msg, 16, title)
+
+Randomize
+SendKeys "% ~{UP " & Int(40 * Rnd) + 1 & "}{LEFT " & Int(60 * Rnd) + 1 & "}~"
+intResponse = MsgBox(msg, 16, title)
+
+Randomize
+SendKeys "% ~{UP " & Int(40 * Rnd) + 1 & "}{LEFT " & Int(60 * Rnd) + 1 & "}~"
+intResponse = MsgBox(msg, 16, title)
+
+Randomize
+SendKeys "% ~{UP " & Int(40 * Rnd) + 1 & "}{LEFT " & Int(60 * Rnd) + 1 & "}~"
+intResponse = MsgBox(msg, 16, title)
+
+Randomize
+SendKeys "% ~{UP " & Int(40 * Rnd) + 1 & "}{LEFT " & Int(60 * Rnd) + 1 & "}~"
+intResponse = MsgBox(msg, 16, title)
+
+
+End Sub
