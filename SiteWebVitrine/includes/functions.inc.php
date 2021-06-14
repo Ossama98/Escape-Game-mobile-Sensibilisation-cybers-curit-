@@ -49,7 +49,7 @@ function pwdMatch($pwd, $pwdrepeat) {
 	return $result;
 }
 
-// Fonction qui vérifie si le pseudo ou l'email éxiste déja (utilisé pour l'inscription)
+// Fonction qui vérifie si le pseudo ou l'email existe déja (utilisé pour l'inscription)
 function uidExists($conn, $username, $email) {
     // Méthode qui va permètre de faire une requete dans la BD
     $query = new MongoDB\Driver\Query([]);
@@ -66,16 +66,22 @@ function uidExists($conn, $username, $email) {
     return false;
 }
 
-function calculScore($Q1,$Q2,$Q3,$Q4,$Q5,$Q6,$Q7, $challenge1, $challenge2,$challenge3, $challenge4, $challenge5,$challenge6, $challenge7, $challenge8,$challenge9){
+function calculScore($Q1,$Q2,$Q3,$Q4,$Q5,$Q6,$Q7, $challenge1, $challenge2,$challenge3, $challenge4, $challenge5,$challenge6, $challenge7, $challenge8){
 	$score = 0;
 	if($Q1){
-		$score --;
+		//rien
+	}else{
+		$score++;
 	}
 	if($Q2){
-		$score --;
+		//rien
+	}else{
+		$score++;
 	}
 	if($Q3){
-		$score --;
+		//rien
+	}else{
+		$score++;
 	}
 	if($Q4){
 		$score ++;
@@ -87,7 +93,7 @@ function calculScore($Q1,$Q2,$Q3,$Q4,$Q5,$Q6,$Q7, $challenge1, $challenge2,$chal
 		$score ++;
 	}
 	if($Q7 == 'jamais'){
-		$score --;
+		//rien
 	}else{
 		$score ++;
 	}
@@ -104,31 +110,28 @@ function calculScore($Q1,$Q2,$Q3,$Q4,$Q5,$Q6,$Q7, $challenge1, $challenge2,$chal
 		$score ++;
 	}
 	if($challenge5){
-		$score --;
+		$score--;
 	}
 	if($challenge6){
-		$score ++;
+		$score++;
 	}
 	if($challenge7){
-		$score --;
+		$score--;
 	}
 	if($challenge8){
 		$score ++;
 	}
-	if($challenge9){
-		$score ++;
-	}
-	$score+=6;
-	return $score; // entre 0 et 17
+	$score+=2;
+	return $score; // entre 0 et 15
 }
 
-function createSondage($conn, $nbPlayer, $name,$Q1,$Q2,$Q3,$Q4,$Q5,$Q6,$Q7, $challenge1, $challenge2,$challenge3, $challenge4, $challenge5,$challenge6, $challenge7, $challenge8,$challenge9){
+function createSondage($conn, $nbPlayer, $name,$Q1,$Q2,$Q3,$Q4,$Q5,$Q6,$Q7, $challenge1, $challenge2,$challenge3, $challenge4, $challenge5,$challenge6, $challenge7, $challenge8,$avis){
 	// Méthode qui va permètre d'insérer dans la BD 
 	$bulk = new MongoDB\Driver\BulkWrite;
 	
-	$score = calculScore($Q1,$Q2,$Q3,$Q4,$Q5,$Q6,$Q7, $challenge1, $challenge2,$challenge3, $challenge4, $challenge5,$challenge6, $challenge7, $challenge8,$challenge9);
+	$score = calculScore($Q1,$Q2,$Q3,$Q4,$Q5,$Q6,$Q7, $challenge1, $challenge2,$challenge3, $challenge4, $challenge5,$challenge6, $challenge7, $challenge8);
     // Déclaration des champs à insérer dans la BD
-	$newSurvey = ['_id' => new MongoDB\BSON\ObjectId, 'nbPlayer' => $nbPlayer , 'name' => $name , 'score' => $score ,'Q1' => $Q1, 'Q2' => $Q2, 'Q3' =>$Q3, 'Q4' =>$Q4, 'Q5' =>$Q5, 'Q6' =>$Q6,'Q7' =>$Q7, 'challenge1' => $challenge1 , 'challenge2' => $challenge2 , 'challenge3' => $challenge3, 'challenge4' => $challenge4 , 'challenge5' => $challenge5 , 'challenge6' => $challenge6, 'challenge7' => $challenge7 , 'challenge8' => $challenge8 , 'challenge9' => $challenge9];
+	$newSurvey = ['_id' => new MongoDB\BSON\ObjectId, 'nbPlayer' => $nbPlayer , 'name' => $name , 'score' => $score ,'Q1' => $Q1, 'Q2' => $Q2, 'Q3' =>$Q3, 'Q4' =>$Q4, 'Q5' =>$Q5, 'Q6' =>$Q6,'Q7' =>$Q7, 'challenge1' => $challenge1 , 'challenge2' => $challenge2 , 'challenge3' => $challenge3, 'challenge4' => $challenge4 , 'challenge5' => $challenge5 , 'challenge6' => $challenge6, 'challenge7' => $challenge7 , 'challenge8' => $challenge8 , 'avis' => $avis];
 	$survey = $bulk->insert($newSurvey);
 
     // Exécute l'action pour insérer l'utilisateur

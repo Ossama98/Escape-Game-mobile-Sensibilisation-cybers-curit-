@@ -22,7 +22,8 @@ if (isset($_POST["submit"])) {
     $challenge6 = $_POST["challenge6"];
     $challenge7 = $_POST["challenge7"];
     $challenge8 = $_POST["challenge8"];
-    $challenge9 = $_POST["challenge9"];
+
+    $avis = $_POST["avis"];
 
     require_once "dbh.inc.php";
     require_once 'functions.inc.php';
@@ -61,7 +62,7 @@ if (isset($_POST["submit"])) {
     }
 */
     // Tout les cas de test ci-dessus sont validé alors insertion du nouvel utilisateur
-    createSondage($conn, $nbPlayer, $name,$Q1,$Q2,$Q3,$Q4,$Q5,$Q6,$Q7, $challenge1, $challenge2,$challenge3, $challenge4, $challenge5,$challenge6, $challenge7, $challenge8,$challenge9);
+    createSondage($conn, $nbPlayer, $name,$Q1,$Q2,$Q3,$Q4,$Q5,$Q6,$Q7, $challenge1, $challenge2,$challenge3, $challenge4, $challenge5,$challenge6, $challenge7, $challenge8,$avis);
 
 } 
 else {
