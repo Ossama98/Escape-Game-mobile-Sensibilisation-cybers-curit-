@@ -28,7 +28,7 @@ body {
   h1, h2, h3, h4, h5, h6, p {
     font-family: 'Roboto', sans-serif;
     color: rgb(255, 255, 255);
-    line-height: 24px;
+    line-height: 48px;
   }
   
   h1 {
@@ -40,6 +40,9 @@ body {
   }
 
   button{
+    text-align: center;
+  }
+  Button{
     text-align: center;
   }
   
@@ -57,8 +60,9 @@ body {
   }
   
   p {
-    font-weight: 400;
-    font-size: 16px;
+    color: rgb(255, 255, 255);
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
   }
   
   nav {
@@ -124,14 +128,15 @@ body {
   
   .signup-form-form {
     border-radius: 15px;
-      background-color: rgba(64, 50, 192, 0.219);
-      overflow: hidden;
-      margin-top: 50px;
+    background-color: rgba(64, 50, 192, 0.219);
+    overflow: hidden;
+    margin-top: 50px;
     opacity: 1;
     margin-left: auto;
     margin-right: auto;
     visibility: visible;
-    width: 400px
+    width: 70%;
+    height: 60%;
   }
   .signup-form p {
     text-align: center;
@@ -140,23 +145,24 @@ body {
   }
   
   .signup-form form {
-    width: 30%;
+    width: 100%;
+    height: 100%;
   }
   
   .signup-form form input {
     border: 0;
-      outline: none;
+    outline: none;
     box-shadow: none;
     display: block;
     margin-left: auto;
     margin-right: auto;
-      height: 30px;
-      line-height: 30px;
+    line-height: 30px;
     padding: 8px 15px;
     background-color: rgba(44, 44, 44, 0.123);
-      border-bottom: 1px solid #eee;
-      width: 400px;
-      font-size: 12px;
+    border-bottom: 1px solid #eee;
+    width: 95%;
+    height: 100px;
+    font-size: 48px;
   }
   .signup-form form input::placeholder{
     color: rgb(248, 248, 248);
@@ -169,13 +175,14 @@ body {
   .signup-form form button {
     background-color: rgba(0,0,0,0.4);
     color: rgba(256,256,256,0.7);
-    border:0;
+    border: 0;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     display: block;
-    margin: 0px 0px; 
+    margin: 0px 0px;
     padding: 15px 45px;
-    width: 400px;
+    width: 100%;
+    height: 60px;
     font-size: 13px;
     font-weight: bold;
     cursor: pointer;
@@ -188,6 +195,13 @@ body {
     background-color: rgba(0,0,0,0.8);
     
   }
+
+  
+  .sondage {
+    display: flex;
+  }
+  
+
   
   .SignIn{
     width: 200px;
@@ -235,19 +249,22 @@ body {
   }
   
 
-  .tableProfil {
+.tableProfil {
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
     border: 2px solid rgb(33, 47, 60, 0.9);
-  }
+}
   
   td {
+    
     color: rgb(255, 255, 255);
     font-family: 'Roboto', sans-serif;
+    font-size: 35px;
   }
 
   tr {
+    width: 100%;
     height: 100px;
   }
 /*
@@ -264,14 +281,13 @@ body {
 
   /* pour le sondage */
 input[type="checkbox"].ios8-switch {
-    position: absolute;
-    margin: 8px 0 0 16px;    
+  display: none;  
 }
 
 input[type="checkbox"].ios8-switch + label {
     position: relative;
-    padding: 5px 0 0 50px;
-    line-height: 2.0em;
+    padding: 10px 0 0 100px;
+    line-height: 4.0em;
 }
 
 input[type="checkbox"].ios8-switch + label:before {
@@ -280,11 +296,11 @@ input[type="checkbox"].ios8-switch + label:before {
     display: block;
     right: 0;
     top: 0;
-    width: 40px; /* x*5 */
-    height: 24px; /* x*3 */
-    border-radius: 16px; /* x*2 */
+    width: 80px; /* x*5 */
+    height: 48px; /* x*3 */
+    border-radius: 32px; /* x*2 */
     background: #fff;
-    border: 1px solid #d9d9d9;
+    border: 2px solid #d9d9d9;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
@@ -295,20 +311,20 @@ input[type="checkbox"].ios8-switch + label:after {
     display: block;
     right: 0px;
     top: 0;
-    width: 24px; /* x*3 */
-    height: 24px; /* x*3 */
-    border-radius: 16px; /* x*2 */
+    width: 48px; /* x*3 */
+    height: 48px; /* x*3 */
+    border-radius: 32px; /* x*2 */
     background: #fff;
-    border: 1px solid #d9d9d9;
+    border: 2px solid #d9d9d9;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
 input[type="checkbox"].ios8-switch + label:hover:after {
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 input[type="checkbox"].ios8-switch:checked + label:after {
-    margin-right: 16px;
+    margin-right: 32px;
 }
 
 input[type="checkbox"].ios8-switch:checked + label:before {
@@ -316,11 +332,11 @@ input[type="checkbox"].ios8-switch:checked + label:before {
 }
 
 .col1{
-  width:700px;
+  width:90%;
 }
 
 .col2{
-  width: 200px;
+  width: 10%;
   text-align: right;
 }
 
@@ -347,8 +363,7 @@ input[type="checkbox"].ios8-switch:checked + label:before {
 }
 
 .Button{
-  position: relative;
-  left: 27.77%;
+  margin-left: 27.77%;
 }
 
 #score{
@@ -369,7 +384,6 @@ input[type="checkbox"].ios8-switch:checked + label:before {
   padding: 20px 0;
   text-align: center;
 }
-
 
 
 
