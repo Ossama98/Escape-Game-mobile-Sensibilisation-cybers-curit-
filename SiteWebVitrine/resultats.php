@@ -20,7 +20,7 @@ afficherLaPageHTML(score);
 
 // Affiche le bon bouton et la bonne indication en fonction du pramètre passé 
 function afficherLaPageHTML(score){
-    document.getElementById("score").innerHTML = "Votre score est de : " + score +"/17" ;
+    document.getElementById("score").innerHTML = "Votre score est de : " + score +"/15" ;
     if(score == "0" || score == "1" ||score == "2"||score == "3"){
         document.getElementById("signification").innerHTML = "Malheuresement il va falloir revoir les bases de la cybersécurité, nous vous invitons à lire ce récapitulatif quant aux bonnes pratiques vis-à-vis de la cybersécurité.";
     }
